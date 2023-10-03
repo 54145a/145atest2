@@ -1,8 +1,3 @@
-class AttributeRewriter {
-  constructor(attributeName) {
-    this.attributeName = attributeName
-  }
-}
 const rewriter = new HTMLRewriter()
   .on('a', new AttributeRewriter('href'))
   //.on('img', new AttributeRewriter('src'))
