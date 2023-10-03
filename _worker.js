@@ -17,9 +17,6 @@ const replace_dict = {
     '$upstream': '$custom_domain',
     '//google.com': ''
 }
-addEventListener('fetch', event => {
-    event.respondWith(fetchAndApply(event.request));
-})
 async function fetchAndApply(request) {
     const region = request.headers.get('cf-ipcountry').toUpperCase();
     const ip_address = request.headers.get('cf-connecting-ip');
@@ -128,4 +125,9 @@ async function device_status(user_agent_info) {
         }
     }
     return flag;
+}
+module.exports = {
+    async fetch(request){
+        return fetchAndApply(request);
+    }
 }
