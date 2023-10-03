@@ -1,14 +1,8 @@
 export default {
-    async fetch(request, env) {
-      let url = new URL(request.url);
-      if(url.pathname.includes("session")){
-        url.pathname = "";
-      }
-      if (url.pathname.startsWith('/')) {
-        url.hostname="github.com";
-        let new_request=new Request(url,request);
-        return fetch(new_request);
-      }
-      return env.ASSETS.fetch(request);
-    }
-}
+  async fetch(request, env) {
+    let url = new URL(request.url);
+    url.hostname = "github.com";
+    let new_request = new Request(url, request);
+    return fetch(new_request);
+  }
+};
