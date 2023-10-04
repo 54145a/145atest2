@@ -1,6 +1,3 @@
-const rewriter = new HTMLRewriter()
-  .on('a', new AttributeRewriter('href'))
-  .on('img', new AttributeRewriter('src'));
 
 class AttributeRewriter {
   constructor(attributeName) {
@@ -17,6 +14,9 @@ class AttributeRewriter {
     }
   }
 }
+const rewriter = new HTMLRewriter()
+.on('a', new AttributeRewriter('href'))
+.on('img', new AttributeRewriter('src'));
 export default {
   async fetch(request, env) {
     let url = new URL(request.url);
