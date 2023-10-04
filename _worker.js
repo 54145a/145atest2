@@ -15,14 +15,18 @@ class AttributeRewriter {
   }
 }
 const rewriter = new HTMLRewriter()
-.on('a', new AttributeRewriter('href'))
-.on('img', new AttributeRewriter('src'));
+  .on('a', new AttributeRewriter('href'))
+  .on('img', new AttributeRewriter('src'));
 export default {
   async fetch(request, env) {
-    let url = new URL(request.url);
-    url.hostname = "github.com";
-    let new_request = new Request(url, request);
-    let new_res = fetch(new_request);
-    return rewriter.transform(new_res)
+    try {
+      let url = new URL(request.url);
+      url.hostname = "github.com";
+      let new_request = new Request(url, request);
+      let new_res = fetch(new_request);
+      return rewriter.transform(new_res);
+    } catch (e) {
+      return e;
+    }
   }
 };
