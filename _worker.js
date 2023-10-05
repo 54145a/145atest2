@@ -47,7 +47,7 @@ export default {
       /*url.hostname = "github.com";
       let new_request = new Request(url, request);
       return fetch(new_request);*/
-      return "Nothing here :)";
+      return "Nothing here :/";
     }
   }
 };
