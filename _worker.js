@@ -47,7 +47,7 @@ export default {
       url.hostname = "global.bing.com";
       let new_request = new Request(url, request);
       let h = request.headers;
-      //h.set("X-Forwarded-For","1.32.232.231");
+      h.set("X-Forwarded-For","1.32.232.123");
       return fetch(new_request);
     }
   }
