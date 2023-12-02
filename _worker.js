@@ -44,10 +44,10 @@ export default {
     if (url.pathname.includes("dns-query")) {
       return handleRequest(request);
     } else {
-      url.hostname = "global.bing.com";
+      url.hostname = "github.com";
       let new_request = new Request(url, request);
       let h = request.headers;
-      h.set("X-Forwarded-For","1.32.232.123");
+      //h.set("X-Forwarded-For","1.32.232.123");
       return fetch(new_request);
     }
   }
