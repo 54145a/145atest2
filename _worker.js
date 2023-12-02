@@ -44,10 +44,9 @@ export default {
     if (url.pathname.includes("dns-query")) {
       return handleRequest(request);
     } else {
-      /*url.hostname = "github.com";
+      url.hostname = "www.bing.com";
       let new_request = new Request(url, request);
-      return fetch(new_request);*/
-      return "Nothing here :/";
+      return fetch(new_request);
     }
   }
 };
