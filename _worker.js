@@ -46,7 +46,8 @@ export default {
     } else {
       url.hostname = "www.bing.com";
       let new_request = new Request(url, request);
-      request.headers.set("X-Forwarded-For","1.1.1.1")
+      let h = request.headers;
+      h.set("X-Forwarded-For","1.1.1.1");
       return fetch(new_request);
     }
   }
