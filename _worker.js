@@ -44,7 +44,7 @@ export default {
     if (url.pathname.includes("dns-query")) {
       return handleRequest(request);
     } else {
-      url.hostname = "edgeservices.bing.com";
+      url.hostname = "global.bing.com";
       let new_request = new Request(url, request);
       let h = request.headers;
       //h.set("X-Forwarded-For","1.32.232.231");
