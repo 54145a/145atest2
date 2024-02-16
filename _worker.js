@@ -50,7 +50,7 @@ export default {
       /*h.set("Origin","https://chat.openai.com");
       h.set("X-Forwarded-For","1.32.232.123");*/
       //return fetch(new_request);
-      return "测试站点";
+      return {name:"测试站点"};
     }
   }
 };
