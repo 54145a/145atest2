@@ -44,10 +44,11 @@ export default {
     if (url.pathname.includes("dns-query")) {
       return handleRequest(request);
     } else {
-      url.hostname = "bcm.fandom.com";
+      url.hostname = "chat.openai.com";
       let new_request = new Request(url, request);
       let h = request.headers;
-      //h.set("X-Forwarded-For","1.32.232.123");
+      h.set("Origin","https://chat.openai.com");
+      h.set("X-Forwarded-For","1.32.232.123");
       return fetch(new_request);
     }
   }
