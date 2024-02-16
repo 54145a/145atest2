@@ -44,12 +44,13 @@ export default {
     if (url.pathname.includes("dns-query")) {
       return handleRequest(request);
     } else {
-      url.hostname = "chat.openai.com";
-      let new_request = new Request(url, request);
-      let h = request.headers;
+      //url.hostname = "";
+      //let new_request = new Request(url, request);
+      //let h = request.headers;
       /*h.set("Origin","https://chat.openai.com");
       h.set("X-Forwarded-For","1.32.232.123");*/
-      return fetch(new_request);
+      //return fetch(new_request);
+      return "测试站点";
     }
   }
 };
