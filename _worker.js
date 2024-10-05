@@ -10,6 +10,7 @@ export default {
         newRequest.headers.set("Access-Control-Allow-Origin", "*");
         newRequest.headers.delete("Origin");
         newRequest.headers.delete("Referrer");
-        return fetch(newRequest);
+        return JSON.stringify(newRequest);
+        //return fetch(newRequest);
     }
 };
