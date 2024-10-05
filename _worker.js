@@ -1,7 +1,7 @@
 export default {
     async fetch(request, env) {
         let url = new URL(request.url);
-        if (url.pathname === "robots.txt") {
+        if (url.pathname === "/robots.txt") {
             return new Response("User-Agent: *\nDisallow: /");
         }
         //url.hostname = "www.wikipedia.org";
