@@ -6,6 +6,6 @@ export default {
         }
         //url.hostname = "www.wikipedia.org";
         //let new_request = new Request(url, request);
-        return new Response("hello, 145a!")//fetch(new_request);
+        return new Response("pathname:" + url.pathname)//fetch(new_request);
     }
 };
