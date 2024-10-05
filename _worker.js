@@ -4,8 +4,8 @@ export default {
         if (url.pathname === "/robots.txt") {
             return new Response("User-Agent: *\nDisallow: /");
         }
-        //url.hostname = "www.wikipedia.org";
-        //let new_request = new Request(url, request);
-        return new Response("pathname:" + url.pathname);//fetch(new_request);
+        url.hostname = "zh.wikipedia.org";
+        let new_request = new Request(url, request);
+        return fetch(new_request);
     }
 };
