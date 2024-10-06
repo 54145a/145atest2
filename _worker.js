@@ -7,9 +7,9 @@ export default {
         }
         url.hostname = targetHostname;
         let newRequest = new Request(url, request);
-        newRequest.headers.set("Access-Control-Allow-Origin", "*");
+        /*newRequest.headers.set("Access-Control-Allow-Origin", "*");
         newRequest.headers.delete("Origin");
-        newRequest.headers.delete("Referrer");
+        newRequest.headers.delete("Referrer");*/
         return new Request(JSON.stringify(newRequest));
         //return fetch(newRequest);
     }
